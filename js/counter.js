@@ -1,3 +1,5 @@
+
+
 // buttons and counter text
 
 // on construit le counteur
@@ -21,11 +23,21 @@ btns.forEach((btn) => {
             count = 0
         }
 
+        // inferieur a 0 impossible
+        if (count <= 0) {
+            count = 0
+        }
+        // si au dessus de 12 reste a 12
+        if (count > 12) {
+            count = 12
+        }
+
         // couleurs selon le niveau >0
         if (count === 12) {
             counter.style.color = 'blue'
         }
-        if (count > 0) {
+        // entre 0 et strictement 11
+        if (count > 0 && count < 12) {
             counter.style.color = 'red'
         }
         // violet si <0
@@ -41,3 +53,4 @@ btns.forEach((btn) => {
         counter.textContent = count
     })
 })
+
